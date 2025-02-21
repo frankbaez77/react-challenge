@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await fetch("https://jsonplaceholder.typicode.com/posts");  //Implementacion del API consumida
+      const data = await response.json();
+      console.log (data);
+      setPosts(data);
+    } catch (error) {
+      console.error("Error al obtener los posts:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+   
+    fetchPosts();
+  }, []);
+
+  if (loading) return <p className="text-center text-gray-500">Cargando...</p>;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Lista de Publicaciones</h1>
+      <ul className="space-y-2">
+        {posts?.slice(0, 10)?.map((post) => (
+          <li key={post.id} className="border p-3 rounded-md shadow-md">
+            <h2 className="font-semibold">{post.title}</h2>
+            <a href={`/details/${post.id}`} className="text-blue-500">Ver detalles</a>
+            {/* <Link to={`/details/${post.id}`} className="text-blue-500">
+              Ver detalles
+            </Link> */}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default App
+export default App;
