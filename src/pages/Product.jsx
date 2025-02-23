@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
-
-const Product = () => {
+export const Product = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,5 +41,3 @@ const Product = () => {
     </div>
   );
 };
-
-export default Product;
