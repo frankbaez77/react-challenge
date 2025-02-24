@@ -42,24 +42,20 @@ npm (o yarn como alternativa)
 
 Paso 1: Clonar el repositorio
 
-  git clone <URL_DEL_REPOSITORIO>
-  cd <NOMBRE_DEL_PROYECTO>
+  git clone <https://github.com/frankbaez77/react-challenge>
+  cd <react-challenge>
 
 Paso 2: Instalar dependencias
 
 Ejecuta el siguiente comando para instalar las dependencias necesarias:
 
   npm install
-  # O si usas yarn
-  yarn install
 
 Paso 3: Ejecutar el proyecto en modo desarrollo
 
 Inicia el servidor de desarrollo con el siguiente comando:
 
   npm run dev
-  # O si usas yarn
-  yarn dev
 
 El proyecto estará disponible en http://localhost:5173/ (o el puerto que indique Vite).
 
@@ -106,17 +102,21 @@ Lista de Publicaciones: Al hacer clic en "Product", se carga la lista de publica
 
 Detalles de Publicación: Se puede hacer clic en un post para ver sus detalles.
 
-Mejoras Futuras
+Mejoras a Futuro:
 
-Implementar autenticación de usuario.
+-Implementar autenticación de usuario.
 
-Agregar modo oscuro.
+-Agregar modo oscuro.
 
-Mejorar la interfaz de usuario con animaciones.
+-Mejorar la interfaz de usuario con animaciones.
 
-Implementar página de "Acerca de".
+-Implementar página de "Acerca de".
 
-Autor
+-Barra de busqueda para buscar contenido especifico
 
-Desarrollado por [Tu Nombre].
+-Mejoras en el menu de Home y Product
+
+Autor:
+
+Desarrollado por Francisco Baez.
 
