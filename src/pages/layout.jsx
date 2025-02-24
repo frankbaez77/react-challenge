@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 
 export function Layout() {
   return (
-    <div>
+    <div className="w-full h-full bg-gradient-to-b from-teal-50 to-teal-200">
       <nav>
         <ul>
           <li>

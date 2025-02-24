@@ -25,9 +25,9 @@ export const Product = () => {
   if (loading) return <p className="text-center text-gray-500">Cargando...</p>;
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Lista de Publicaciones</h1>
-      <ul className="space-y-2">
+    <div className="w-full p-4">
+      <h1 className="text-center font-bold mb-4">Lista de Publicaciones</h1>
+      <ul className="w-full grid grid-cols-1 md:grid-cols-4 gap-4">
         {posts.slice(0, 10).map((post) => (
           <li key={post.id} className="border p-3 rounded-md shadow-md">
             <h2 className="font-semibold">{post.title}</h2>

@@ -22,18 +22,18 @@ const Details = () => {
 
   useEffect(() => {
     
-
     fetchPost(id);
   }, [id]);
 
   if (loading) return <p className="text-center text-gray-500">Cargando...</p>;
+    
   if (!post) return <p className="text-center text-red-500">No se encontró la publicación.</p>;
 
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold" style={{color, backgroundColor}}>{post.title}</h1>
       <p className="mt-2">{post.body}</p>
-      <a href="/">Volver a la lista </a>
+      <a href="/product">Volver a la lista </a>
     </div>
   );
 };
