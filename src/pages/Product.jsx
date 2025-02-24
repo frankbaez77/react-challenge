@@ -32,9 +32,6 @@ export const Product = () => {
           <li key={post.id} className="border p-3 rounded-md shadow-md">
             <h2 className="font-semibold">{post.title}</h2>
             <a href={`/detail/${post.id}`} className="text-blue-500">Ver detalles</a>
-            {/* <Link to={`/details/${post.id}`} className="text-blue-500">
-              Ver detalles
-            </Link> */}
           </li>
         ))}
       </ul>
